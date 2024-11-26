@@ -1268,13 +1268,13 @@ void CaptureWidget::setDrawColor(const QColor& c)
         // Update mouse preview
         updateTool(activeButtonTool());
 
-        // change color for the active tool
-        auto toolItem = activeToolObject();
-        if (toolItem) {
-            // Change color
-            toolItem->onColorChanged(c);
-            drawToolsData();
-        }
+        // // change color for the active tool
+        // auto toolItem = activeToolObject();
+        // if (toolItem) {
+        //     // Change color
+        //     toolItem->onColorChanged(c);
+        //     drawToolsData();
+        // }
     }
 }
 
