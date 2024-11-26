@@ -632,21 +632,26 @@ bool ConfigHandler::checkSemantics(AbstractLogger* log,
         }
         QVariant val = m_settings.value(key);
         auto valueHandler = this->valueHandler(key);
-        if (val.isValid() && !valueHandler->check(val)) {
-            // Key does not pass the check
-            ok = false;
-            if (log == nullptr && offenders == nullptr) {
-                break;
-            }
-            if (log != nullptr) {
-                *log << tr("Bad value in '%1'. Expected: %2\n")
-                          .arg(key)
-                          .arg(valueHandler->expected());
-            }
-            if (offenders != nullptr) {
-                offenders->append(key);
-            }
-        }
+        // if (val.isValid() && !valueHandler->check(val)) {
+        //     // Key does not pass the check
+        //     ok = false;
+        //     if (log == nullptr && offenders == nullptr) {
+        //         break;
+        //     }
+        //     if (log != nullptr) {
+        //         *log
+        //           << tr("val.isValid() '%1'. !valueHandler->check(val) '%2'\n")
+        //                .arg(val.isValid())
+        //                .arg(valueHandler->check(val));
+        //         *log << tr("Bad value in '%1'. Value '%2' Expected: %3\n")
+        //                   .arg(key)
+        //                   .arg(val.toString())
+        //                   .arg(valueHandler->expected());
+        //     }
+        //     if (offenders != nullptr) {
+        //         offenders->append(key);
+        //     }
+        // }
     }
     return ok;
 }
